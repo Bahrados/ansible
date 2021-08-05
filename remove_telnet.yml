@@ -1,0 +1,19 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repository index
+    yum:
+      update_cache: yes
+
+  - name: install telnet
+    yum:
+      name: telnet
+      state: absent
+
+  - name: Install Wget
+    yum:
+      name: wget
+      state: absent
